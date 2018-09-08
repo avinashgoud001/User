@@ -1,0 +1,19 @@
+<h1>Listing users</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Note</th>
+  </tr>
+ 
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.title %></td>
+      <td><%= user.note %></td>
+      <td><%= link_to "Show", controller: "users", action:"show",id: user.id %></td>
+      <td><%= link_to "Delete", "/users/" + user.id.to_s, method: :delete%></td>
+      <td><%= link_to "edit", controller: "users", action:"edit",id: user.id %></td>
+    </tr>
+  <% end %>
+  <td><%= link_to "add user", controller: "users", action:"new"%></td>
+</table>

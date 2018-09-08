@@ -1,0 +1,19 @@
+<h1>Edit user</h1>
+
+<%= form_for :user, url: "/users/"+ @user.id.to_s, method: :put do |form| %>
+
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, value:@user.title %>
+  </p>
+ 
+  <p>
+    <%= form.label :note %><br>
+    <%= form.text_field :note, value:@user.note %>
+  </p>
+ 
+  <p>
+    <%= form.submit "update"%>
+  </p>
+ 
+<% end %>
